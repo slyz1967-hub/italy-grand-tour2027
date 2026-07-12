@@ -254,8 +254,8 @@
 
         function renderDays() {
             const container = document.getElementById('days');
-            container.innerHTML = fullItinerary.map(item => `
-                <div onclick="showDetails('${item.day}', '${item.place}', '${item.stay}', '${item.tours}', '${item.map}', ${JSON.stringify(item.mapLinks).replace(/"/g, '&quot;')})" 
+            container.innerHTML = fullItinerary.map((item, index) => `
+                <div onclick="showDetailsByIndex(${index})" 
                      class="day-card bg-white p-8 rounded-3xl shadow-md hover:shadow-xl cursor-pointer border border-orange-100">
                     <div class="flex justify-between items-start">
                         <div>
@@ -272,6 +272,11 @@
                     </div>
                 </div>
             `).join('');
+        }
+
+        function showDetailsByIndex(index) {
+            const item = fullItinerary[index];
+            showDetails(item.day, item.place, item.stay, item.tours, item.map, item.mapLinks);
         }
 
         function showDetails(day, place, stay, tours, map, mapLinks) {
