@@ -1,0 +1,22 @@
+{
+  "name": "Italy Grand Tour 2027",
+  "short_name": "Italy Tour 2027",
+  "description": "Interactive luxury itinerary for Jervis Smith Grand Italy Tour",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f1f5f9",
+  "theme_color": "#0e7490",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://picsum.photos/id/1015/192/192",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://picsum.photos/id/1015/512/512",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
