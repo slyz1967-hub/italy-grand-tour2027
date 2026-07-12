@@ -16,6 +16,8 @@
         .day-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
         .resource-link { transition: all 0.2s; }
         .resource-link:hover { transform: translateX(4px); color: #0e7490; }
+        details summary { cursor: pointer; }
+        details[open] summary { margin-bottom: 12px; }
     </style>
 </head>
 <body class="bg-[#f1f5f9]">
@@ -75,7 +77,7 @@
                 </div>
             </div>
 
-            <!-- DIARY & NOTES SECTION -->
+            <!-- NEW: DIARY & NOTES SECTION -->
             <div class="mb-12">
                 <div class="flex items-center justify-between mb-6">
                     <h3 class="text-3xl heading-font font-bold text-blue-900 flex items-center gap-3">
@@ -92,8 +94,8 @@
                     <textarea id="general-notes" class="w-full h-32 p-4 border border-slate-200 rounded-2xl focus:outline-none focus:border-orange-400" placeholder="Write anything about the overall trip here..."></textarea>
                 </div>
 
-                <!-- Per Day Notes -->
-                <div id="diary-days" class="space-y-4"></div>
+                <!-- Collapsible Per Day Notes -->
+                <div id="diary-days" class="space-y-3"></div>
             </div>
 
             <h3 class="text-2xl font-semibold mb-6 text-blue-900">Tap any day for full details, tours & interactive maps</h3>
@@ -177,10 +179,13 @@
                 </div>
             </div>
         </div>
+
+        <footer class="bg-white p-8 text-center text-sm text-slate-500 border-t">
+            Chirn Park Travel • Private Luxury Tour • All details from your original itinerary • Updated July 2026
+        </footer>
     </div>
 
     <script>
-        // Full Itinerary Data
         const fullItinerary = [
             {
                 day: "Days 1-3",
@@ -189,7 +194,7 @@
                 tours: "Private Golf Cart Tour (3h), Private Half Day Vatican Tour with skip-the-line (4h guide + transfer), Private Ancient Rome Tour (Colosseum, Palatine, Forum with skip-the-line)",
                 map: "Historic Center: Via Giulia, Pantheon, Piazza Navona, Colosseum, Vatican Museums & St. Peter's Basilica",
                 mapLinks: [
-                    { label: "Rome Historic Center", url: "https://www.google.com/maps/search/?api=1&query=Rome+Historic+Center" },
+                    { label: "Open Positano on Google Maps", url: "https://www.google.com/maps/search/?api=1&query=Positano+Italy" },
                     { label: "Colosseum & Ancient Rome", url: "https://www.google.com/maps/search/?api=1&query=Colosseum+Rome" },
                     { label: "Vatican Museums & St. Peter's", url: "https://www.google.com/maps/search/?api=1&query=Vatican+Museums+Rome" }
                 ]
@@ -249,8 +254,8 @@
 
         function renderDays() {
             const container = document.getElementById('days');
-            container.innerHTML = fullItinerary.map((item, index) => `
-                <div onclick="showDetailsByIndex(${index})" 
+            container.innerHTML = fullItinerary.map(item => `
+                <div onclick="showDetails('${item.day}', '${item.place}', '${item.stay}', '${item.tours}', '${item.map}', ${JSON.stringify(item.mapLinks).replace(/"/g, '&quot;')})" 
                      class="day-card bg-white p-8 rounded-3xl shadow-md hover:shadow-xl cursor-pointer border border-orange-100">
                     <div class="flex justify-between items-start">
                         <div>
@@ -269,20 +274,18 @@
             `).join('');
         }
 
-        function showDetailsByIndex(index) {
-            const item = fullItinerary[index];
-            showDetails(item.day, item.place, item.stay, item.tours, item.map, item.mapLinks);
-        }
-
         function showDetails(day, place, stay, tours, map, mapLinks) {
             const modal = document.createElement('div');
             modal.className = 'fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4';
             
-            let mapButtonsHTML = mapLinks.map(link => 
-                `<a href="${link.url}" target="_blank" class="block w-full text-center bg-orange-100 hover:bg-orange-200 text-orange-800 font-medium py-3 px-4 rounded-2xl mb-2 transition flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-map-marker-alt"></i> ${link.label}
-                </a>`
-            ).join('');
+            let mapButtonsHTML = '';
+            if (mapLinks && mapLinks.length > 0) {
+                mapButtonsHTML = mapLinks.map(link => 
+                    `<a href="${link.url}" target="_blank" class="block w-full text-center bg-orange-100 hover:bg-orange-200 text-orange-800 font-medium py-3 px-4 rounded-2xl mb-2 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-map-marker-alt"></i> ${link.label}
+                    </a>`
+                ).join('');
+            }
 
             modal.innerHTML = `
                 <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-auto shadow-2xl">
@@ -321,107 +324,33 @@
                                     <i class="fa-solid fa-directions"></i> Quick Map Links
                                 </div>
                                 <div class="space-y-2">
-                                    ${mapButtonsHTML}
+                                    ${mapButtonsHTML || '<p class="text-sm text-amber-700">Open Google Maps for this area using the links above.</p>'}
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="p-6 border-t flex justify-end gap-3 bg-slate-50 rounded-b-3xl">
-                        <button onclick="this.closest('.fixed').remove()" class="px-8 py-3 rounded-2xl bg-white border hover:bg-slate-100 font-medium">Close</button>
+                        <button onclick="this.closest('.fixed').remove()" 
+                                class="px-8 py-3 rounded-2xl bg-white border hover:bg-slate-100 font-medium">Close</button>
                     </div>
                 </div>
             `;
             document.body.appendChild(modal);
         }
 
-        // Diary Feature
+        // === DIARY FEATURE (Collapsible) ===
         function renderDiary() {
             const container = document.getElementById('diary-days');
             
             container.innerHTML = fullItinerary.map(item => {
                 const key = item.place.toLowerCase().replace(/\s+/g, '');
                 return `
-                    <div class="bg-white p-6 rounded-3xl shadow border border-orange-100">
-                        <div class="flex justify-between items-center mb-3">
+                    <details class="bg-white rounded-3xl shadow border border-orange-100">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
                             <div>
                                 <span class="text-amber-600 font-mono text-sm">${item.day}</span>
                                 <h4 class="font-semibold text-xl">${item.place}</h4>
                             </div>
-                        </div>
-                        <textarea id="note-${key}" class="w-full h-28 p-4 border border-slate-200 rounded-2xl focus:outline-none focus:border-orange-400" placeholder="What did you do in ${item.place}?"></textarea>
-                    </div>
-                `;
-            }).join('');
-
-            loadNotes();
-
-            fullItinerary.forEach(item => {
-                const key = item.place.toLowerCase().replace(/\s+/g, '');
-                const textarea = document.getElementById(`note-${key}`);
-                if (textarea) {
-                    textarea.addEventListener('input', () => {
-                        localStorage.setItem(`note-${key}`, textarea.value);
-                    });
-                }
-            });
-
-            const general = document.getElementById('general-notes');
-            if (general) {
-                general.addEventListener('input', () => {
-                    localStorage.setItem('general-trip-notes', general.value);
-                });
-            }
-        }
-
-        function loadNotes() {
-            fullItinerary.forEach(item => {
-                const key = item.place.toLowerCase().replace(/\s+/g, '');
-                const textarea = document.getElementById(`note-${key}`);
-                if (textarea) {
-                    const saved = localStorage.getItem(`note-${key}`);
-                    if (saved) textarea.value = saved;
-                }
-            });
-
-            const general = document.getElementById('general-notes');
-            if (general) {
-                const saved = localStorage.getItem('general-trip-notes');
-                if (saved) general.value = saved;
-            }
-        }
-
-        function exportNotes() {
-            let content = "Italy Grand Tour 2027 - Diary & Notes\n";
-            content += "=====================================\n\n";
-
-            const general = document.getElementById('general-notes').value.trim();
-            if (general) {
-                content += "GENERAL TRIP NOTES\n-------------------\n" + general + "\n\n";
-            }
-
-            fullItinerary.forEach(item => {
-                const key = item.place.toLowerCase().replace(/\s+/g, '');
-                const note = document.getElementById(`note-${key}`).value.trim();
-                if (note) {
-                    content += `${item.day} - ${item.place}\n---------------------------\n${note}\n\n`;
-                }
-            });
-
-            const blob = new Blob([content], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Italy-Tour-2027-Notes.txt';
-            a.click();
-            URL.revokeObjectURL(url);
-        }
-
-        function init() {
-            renderDays();
-            renderDiary();
-        }
-
-        init();
-    </script>
-</body>
-</html>
+                            <i class="fa-solid fa-chevron-down text-orange-600 transition-transform"></i>
+                        </summary>
+                        <div
