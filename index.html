@@ -567,38 +567,50 @@
 
         // === HELPER TOOLS ===
         function renderPackingList() {
-            const container = document.getElementById('packing-list');
-            let items = JSON.parse(localStorage.getItem('packingList')) || [
-                "Passport & Documents", "Travel Insurance", "Moon Boot / Orthotics", 
-                "Compression socks", "Comfortable walking shoes", "Sunscreen & Hat", 
-                "Power bank & adapters", "Medications", "Phone + charger"
-            ];
+    const container = document.getElementById('packing-list');
+    let items = JSON.parse(localStorage.getItem('packingList')) || [
+        "Passport & Documents", "Travel Insurance", "Moon Boot / Orthotics", 
+        "Compression socks", "Comfortable walking shoes", "Sunscreen & Hat", 
+        "Power bank & adapters", "Medications", "Phone + charger"
+    ];
 
-            container.innerHTML = items.map((item, index) => `
-                <div class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-2xl">
-                    <input type="checkbox" id="pack-${index}" class="w-5 h-5 accent-orange-600">
-                    <label for="pack-${index}" class="flex-1">${item}</label>
-                    <button onclick="removePackingItem(${index})" class="text-red-400 hover:text-red-600">×</button>
-                </div>
-            `).join('');
-        }
+    container.innerHTML = items.map((item, index) => {
+        return `
+            <div class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-2xl">
+                <input type="checkbox" id="pack-${index}" class="w-5 h-5 accent-orange-600">
+                <label for="pack-${index}" class="flex-1">${item}</label>
+                <button data-index="${index}" class="remove-btn text-red-400 hover:text-red-600 text-xl leading-none">×</button>
+            </div>
+        `;
+    }).join('');
 
-        function addPackingItem() {
-            const input = document.getElementById('new-packing-item');
-            if (!input.value.trim()) return;
-            let items = JSON.parse(localStorage.getItem('packingList')) || [];
-            items.push(input.value.trim());
-            localStorage.setItem('packingList', JSON.stringify(items));
-            input.value = '';
-            renderPackingList();
-        }
+    // Add click listeners for remove buttons
+    const removeButtons = container.querySelectorAll('.remove-btn');
+    removeButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const idx = parseInt(this.getAttribute('data-index'));
+            removePackingItem(idx);
+        });
+    });
+}
 
-        function removePackingItem(index) {
-            let items = JSON.parse(localStorage.getItem('packingList')) || [];
-            items.splice(index, 1);
-            localStorage.setItem('packingList', JSON.stringify(items));
-            renderPackingList();
-        }
+function addPackingItem() {
+    const input = document.getElementById('new-packing-item');
+    if (!input.value.trim()) return;
+
+    let items = JSON.parse(localStorage.getItem('packingList')) || [];
+    items.push(input.value.trim());
+    localStorage.setItem('packingList', JSON.stringify(items));
+    input.value = '';
+    renderPackingList();
+}
+
+function removePackingItem(index) {
+    let items = JSON.parse(localStorage.getItem('packingList')) || [];
+    items.splice(index, 1);
+    localStorage.setItem('packingList', JSON.stringify(items));
+    renderPackingList();
+}
 
         function renderDocumentsList() {
             const container = document.getElementById('documents-list');
