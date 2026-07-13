@@ -329,7 +329,12 @@
                                     <i class="fa-solid fa-directions"></i> Quick Map Links
                                 </div>
                                 <div class="space-y-2">
-                                    ${mapButtonsHTML || '<p class="text-sm text-amber-700">Open Google Maps for this area using the links above.</p>'}
+                                    ${mapButtonsHTML}
+                                    
+                                    <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(stay)}" target="_blank" 
+                                       class="block w-full text-center bg-blue-100 hover:bg-blue-200 text-blue-800 font-medium py-3 px-4 rounded-2xl mb-2 transition flex items-center justify-center gap-2">
+                                        <i class="fa-solid fa-hotel"></i> View Accommodation on Map
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -405,27 +410,48 @@
         }
 
         function exportNotes() {
-            let content = "Italy Grand Tour 2027 - Diary & Notes\n";
-            content += "=====================================\n\n";
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('en-AU', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            const timeStr = now.toLocaleTimeString('en-AU', { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+
+            let content = `Italy Grand Tour 2027 - Diary & Notes\n`;
+            content += `Exported: ${dateStr} at ${timeStr}\n`;
+            content += `=====================================\n\n`;
 
             const general = document.getElementById('general-notes').value.trim();
             if (general) {
-                content += "GENERAL TRIP NOTES\n-------------------\n" + general + "\n\n";
+                content += "GENERAL TRIP NOTES\n";
+                content += "------------------\n";
+                content += general + "\n\n";
             }
 
             fullItinerary.forEach(item => {
                 const key = item.place.toLowerCase().replace(/\s+/g, '');
                 const note = document.getElementById(`note-${key}`).value.trim();
                 if (note) {
-                    content += `${item.day} - ${item.place}\n---------------------------\n${note}\n\n`;
+                    content += `${item.day} - ${item.place}\n`;
+                    content += "---------------------------\n";
+                    content += note + "\n\n";
                 }
             });
+
+            if (!general && !fullItinerary.some(i => document.getElementById(`note-${i.place.toLowerCase().replace(/\s+/g, '')}`).value.trim())) {
+                content += "(No notes written yet)";
+            }
 
             const blob = new Blob([content], { type: 'text/plain' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'Italy-Tour-2027-Notes.txt';
+            a.download = `Italy-Tour-2027-Notes-${now.toISOString().split('T')[0]}.txt`;
             a.click();
             URL.revokeObjectURL(url);
         }
