@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy Grand Tour 2027 • Jervis Smith</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0e7490">
+    <link rel="icon" href="icon-192.png" type="image/png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Italy Tour">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; }
+        .heading-font { font-family: 'Playfair Display', serif; }
+        .med-sea { background: linear-gradient(135deg, #0e7490, #0369a1); }
+        .day-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .day-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
+        .resource-link { transition: all 0.2s; }
+        .resource-link:hover { transform: translateX(4px); color: #0e7490; }
+        details summary { cursor: pointer; }
+
+        /* Larger tap targets for checkboxes and small buttons */
+        input[type="checkbox"] { min-width: 26px; min-height: 26px; }
+        .remove-btn { min-width: 36px; min-height: 36px; display: inline-flex; align-items: center; justify-content: center; }
+
+        /* High-contrast / outdoor-readable mode */
+        body.high-contrast { background: #ffffff; }
+        body.high-contrast .text-slate-500,
+        body.high-contrast .text-slate-600,
+        body.high-contrast .text-slate-700 { color: #000000 !important; }
+        body.high-contrast .bg-slate-50 { background: #eaeaea !important; }
+        body.high-contrast .border-orange-100,
+        body.high-contrast .border-slate-200,
+        body.high-contrast .border-slate-300 { border-color: #000000 !important; border-width: 2px !important; }
+        body.high-contrast .text-blue-900 { color: #001a4d !important; }
+        body.high-contrast .text-amber-600,
+        body.high-contrast .text-orange-600 { color: #a34700 !important; font-weight: 700 !important; }
+        body.high-contrast .resource-link,
+        body.high-contrast a.text-blue-700 { color: #0033cc !important; font-weight: 600 !important; text-decoration: underline; }
+        body.high-contrast .shadow,
+        body.high-contrast .shadow-md { box-shadow: 0 0 0 2px #000 !important; }
+        body.high-contrast p, body.high-contrast div, body.high-contrast li, body.high-contrast span { font-weight: 500; }
+
+        /* Dark mode */
+        body.dark-mode { background: #0f172a; color: #e2e8f0; }
+        body.dark-mode .bg-white { background: #1e293b !important; }
+        body.dark-mode .bg-slate-50 { background: #0f172a !important; }
+        body.dark-mode .bg-slate-100 { background: #334155 !important; }
+        body.dark-mode .bg-amber-50 { background: #422006 !important; }
+        body.dark-mode .bg-red-50 { background: #450a0a !important; }
+        body.dark-mode .text-blue-900 { color: #93c5fd !important; }
+        body.dark-mode .text-slate-500,
+        body.dark-mode .text-slate-600,
+        body.dark-mode .text-slate-700 { color: #cbd5e1 !important; }
+        body.dark-mode .text-amber-800 { color: #fcd34d !important; }
+        body.dark-mode .border-orange-100,
+        body.dark-mode .border-slate-200,
+        body.dark-mode .border-slate-300,
+        body.dark-mode .border-t,
+        body.dark-mode .border-b { border-color: #334155 !important; }
+        body.dark-mode .border-red-200 { border-color: #7f1d1d !important; }
+        body.dark-mode .border-amber-200 { border-color: #78350f !important; }
+        body.dark-mode a.text-blue-700,
+        body.dark-mode .resource-link { color: #7dd3fc !important; }
+        body.dark-mode input,
+        body.dark-mode textarea { background: #1e293b !important; color: #e2e8f0 !important; border-color: #475569 !important; }
+        body.dark-mode input::placeholder,
+        body.dark-mode textarea::placeholder { color: #64748b !important; }
+        body.dark-mode footer { background: #1e293b !important; }
+        body.dark-mode nav.fixed.bottom-0 { background: rgba(15,23,42,0.95) !important; border-color: #334155 !important; }
+        body.dark-mode .shadow,
+        body.dark-mode .shadow-md,
+        body.dark-mode .shadow-lg { box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important; }
+        details[open] summary { margin-bottom: 12px; }
+    </style>
+</head>
+<body class="bg-[#f1f5f9]">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="med-sea text-white shadow">
+            <div class="px-4 py-4 sm:px-8 sm:py-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <div class="text-3xl sm:text-4xl shrink-0">🌊</div>
+                    <div class="min-w-0">
+                        <h1 class="heading-font text-xl sm:text-3xl font-bold leading-tight">Grand Tour of Italy</h1>
+                        <p class="opacity-90 text-xs sm:text-base">May 19 – June 6, 2027 • Jervis Smith</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-2 sm:gap-6 text-xs sm:text-sm">
+                    <div id="countdown-pill" class="bg-white/20 px-3 py-1.5 sm:px-5 sm:py-2 rounded-3xl font-medium"></div>
+                    <div id="currency-pill" class="bg-white/20 px-3 py-1.5 sm:px-5 sm:py-2 rounded-3xl">€1 ≈ 1.65 AUD</div>
+                    <a href="https://translate.google.com/?sl=en&tl=it&op=translate" class="hover:underline flex items-center gap-1.5">
+                        <span class="text-base sm:text-xl">🇮🇹</span> Translate
+                    </a>
+                    <button onclick="document.getElementById('resources').scrollIntoView({ behavior: 'smooth' })" 
+                            class="bg-white/20 hover:bg-white/30 px-3 py-1.5 sm:px-4 sm:py-2 rounded-3xl flex items-center gap-2 font-medium">
+                        <i class="fa-solid fa-link"></i> Resources
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div id="itinerary" class="p-4 sm:p-8 pb-28">
+            <h2 class="text-2xl sm:text-4xl heading-font font-bold text-blue-900 mb-6 sm:mb-8">Your Luxury Itinerary</h2>
+            
+            <!-- Quick Overview -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-10">
+                <div id="overview-0" class="bg-white p-4 rounded-2xl shadow text-center border border-orange-100">
+                    <div class="text-amber-600 text-base font-medium">ROME</div>
+                    <div class="font-semibold text-lg">Days 1-3</div>
+                    <div class="text-sm text-slate-500 mt-1">DOM Hotel • 5★</div>
+                </div>
+                <div id="overview-1" class="bg-white p-4 rounded-2xl shadow text-center border border-orange-100">
+                    <div class="text-amber-600 text-base font-medium">POSITANO</div>
+                    <div class="font-semibold text-lg">Days 4-8</div>
+                    <div class="text-sm text-slate-500 mt-1">Torre Sponda • Private Estate</div>
+                </div>
+                <div id="overview-2" class="bg-white p-4 rounded-2xl shadow text-center border border-orange-100">
+                    <div class="text-amber-600 text-base font-medium">FLORENCE</div>
+                    <div class="font-semibold text-lg">Days 9-11</div>
+                    <div class="text-sm text-slate-500 mt-1">Leone Blu Suites • 5★</div>
+                </div>
+                <div id="overview-3" class="bg-white p-4 rounded-2xl shadow text-center border border-orange-100">
+                    <div class="text-amber-600 text-base font-medium">CHIANTI</div>
+                    <div class="font-semibold text-lg">Days 12-15</div>
+                    <div class="text-sm text-slate-500 mt-1">Castello di Spaltenna • 5★</div>
+                </div>
+                <div id="overview-4" class="bg-white p-4 rounded-2xl shadow text-center border border-orange-100">
+                    <div class="text-amber-600 text-base font-medium">LAKE MAGGIORE</div>
+                    <div class="font-semibold text-lg">Days 16-18</div>
+                    <div class="text-sm text-slate-500 mt-1">Villa Aminta • 5★ LHW</div>
+                </div>
+
+            </div>
+
+            <!-- DIARY & NOTES SECTION -->
+            <div id="diary" class="mb-12">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-3xl heading-font font-bold text-blue-900 flex items-center gap-3">
+                        <i class="fa-solid fa-book text-orange-600"></i> Diary & Notes
+                    </h3>
+                    <button onclick="exportNotes()" class="flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-5 py-3 rounded-2xl text-base font-medium">
+                        <i class="fa-solid fa-download"></i> Export Everything
+                    </button>
+                </div>
+
+                <!-- General Trip Notes -->
+                <div class="bg-white p-6 rounded-3xl shadow mb-8 border border-orange-100">
+                    <h4 class="font-semibold text-xl mb-3 text-blue-900">General Trip Notes</h4>
+                    <textarea id="general-notes" class="w-full h-32 p-4 text-base leading-relaxed border border-slate-200 rounded-2xl focus:outline-none focus:border-orange-400" placeholder="Write anything about the overall trip here..."></textarea>
+                </div>
+
+                <!-- Collapsible Per Day Notes -->
+                <div id="diary-days" class="space-y-3"></div>
+            </div>
+
+            <!-- TRIP HELPER TOOLS -->
+            <div id="tools" class="mb-12">
+                <h3 class="text-3xl heading-font font-bold text-blue-900 mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-toolbox text-orange-600"></i> Trip Helper Tools
+                </h3>
+
+                <!-- Packing List -->
+                <details class="bg-white rounded-3xl shadow border border-orange-100 mb-4">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-suitcase text-orange-600 text-xl"></i>
+                            <h4 class="font-semibold text-xl">Packing List</h4>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6">
+                        <div id="packing-list" class="space-y-2"></div>
+                        <div class="mt-4 flex gap-2">
+                            <input id="new-packing-item" type="text" placeholder="Add new item..." class="flex-1 border border-slate-300 rounded-2xl px-4 py-3 text-base">
+                            <button onclick="addPackingItem()" class="bg-orange-600 text-white px-5 py-3 rounded-2xl text-base font-medium">Add</button>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Emergency & Medical Info -->
+                <details id="emergency-card" class="bg-white rounded-3xl shadow border-2 border-red-200 mb-4">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-kit-medical text-red-600 text-xl"></i>
+                            <h4 class="font-semibold text-xl">Emergency & Medical Info</h4>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-base leading-relaxed space-y-5">
+
+                        <div class="bg-red-50 border border-red-200 rounded-2xl p-4 space-y-1.5">
+                            <div><strong>Emergency (Police/Fire/Ambulance)</strong> — <a href="tel:112" class="text-red-600 font-semibold hover:underline">112</a> <span class="text-sm text-slate-600">(EU-wide, English-speaking operators, works even without your SIM active)</span></div>
+                            <div><strong>Ambulance direct (Italy)</strong> — <a href="tel:118" class="text-red-600 font-semibold hover:underline">118</a></div>
+                        </div>
+
+                        <div>
+                            <div class="font-semibold text-blue-900 mb-2">Nearest Hospital by Location</div>
+                            <div class="space-y-3">
+                                <div class="bg-slate-50 rounded-2xl p-3">
+                                    <div class="font-medium">Rome — Ospedale Fatebenefratelli</div>
+                                    <div class="text-sm text-slate-600">Isola Tiberina, central Rome (across the river from Via Giulia) · 24/7 ER</div>
+                                    <a href="tel:0668371" class="text-blue-700 hover:underline text-sm">06 6837 1</a>
+                                </div>
+                                <div class="bg-slate-50 rounded-2xl p-3">
+                                    <div class="font-medium">Positano — Amalfi Coast Hospital</div>
+                                    <div class="text-sm text-slate-600">Via Cigliano, Castiglione (Ravello) · ~20 min drive · 24/7 ER</div>
+                                </div>
+                                <div class="bg-slate-50 rounded-2xl p-3">
+                                    <div class="font-medium">Florence — Ospedale Santa Maria Nuova</div>
+                                    <div class="text-sm text-slate-600">Piazza Santa Maria Nuova 1, historic center · 24/7 ER</div>
+                                    <a href="tel:0556938" class="text-blue-700 hover:underline text-sm">055 693 81</a>
+                                </div>
+                                <div class="bg-slate-50 rounded-2xl p-3">
+                                    <div class="font-medium">Gaiole in Chianti — Policlinico Le Scotte, Siena</div>
+                                    <div class="text-sm text-slate-600">Viale Bracci 16, Siena · ~25 min drive · major hospital, 24/7 ER</div>
+                                    <a href="tel:0577585111" class="text-blue-700 hover:underline text-sm">0577 585 111</a>
+                                </div>
+                                <div class="bg-slate-50 rounded-2xl p-3">
+                                    <div class="font-medium">Stresa — Ospedale Castelli, Verbania</div>
+                                    <div class="text-sm text-slate-600">Via Fiume 18, Verbania · ~15 min drive · 24/7 ER</div>
+                                    <a href="tel:03235411" class="text-blue-700 hover:underline text-sm">0323 5411</a>
+                                </div>
+                            </div>
+                            <div class="text-sm text-slate-500 mt-2">For minor issues (colds, prescriptions, small cuts), a <strong>farmacia</strong> (green cross sign) is faster than the ER — pharmacists can often help directly.</div>
+                        </div>
+
+                        <div>
+                            <div class="font-semibold text-blue-900 mb-2">Australian Consular Assistance</div>
+                            <div class="space-y-1.5">
+                                <div><strong>Australian Embassy, Rome</strong> — <a href="tel:+3906852721" class="text-blue-700 hover:underline">+39 06 852721</a></div>
+                                <div><strong>Australian Consulate-General, Milan</strong> <span class="text-sm text-slate-500">(nearest to Stresa)</span> — <a href="tel:+390277674200" class="text-blue-700 hover:underline">+39 02 7767 4200</a></div>
+                                <div><strong>DFAT 24-hr Consular Emergency Centre</strong> <span class="text-sm text-slate-500">(lost passport, arrest, serious accident, death)</span> — <a href="tel:+61262613305" class="text-blue-700 hover:underline">+61 2 6261 3305</a></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="font-semibold text-blue-900 mb-2">Travel Insurance</div>
+                            <input id="insurance-info" type="text" placeholder="Provider, policy number, and 24hr emergency phone" class="w-full border border-slate-300 rounded-2xl px-4 py-3 text-base">
+                        </div>
+
+                        <div>
+                            <div class="font-semibold text-blue-900 mb-2">Personal Medical Notes <span class="text-sm font-normal text-slate-500">(allergies, medications, blood type — saved on this device only)</span></div>
+                            <textarea id="medical-notes" class="w-full h-20 border border-slate-300 rounded-2xl p-3 text-base leading-relaxed" placeholder="e.g. Penicillin allergy, blood type O+, takes daily medication X"></textarea>
+                        </div>
+
+                        <div>
+                            <div class="font-semibold text-blue-900 mb-2">Other Notes</div>
+                            <textarea id="contacts-notes" class="w-full h-20 border border-slate-300 rounded-2xl p-3 text-base leading-relaxed" placeholder="Add extra contact notes here..."></textarea>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Documents Checklist -->
+                <details class="bg-white rounded-3xl shadow border border-orange-100 mb-4">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-file-alt text-orange-600 text-xl"></i>
+                            <h4 class="font-semibold text-xl">Documents Checklist</h4>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6">
+                        <div id="documents-list" class="space-y-2"></div>
+                    </div>
+                </details>
+
+                <!-- Budget Tracker -->
+                <details class="bg-white rounded-3xl shadow border border-orange-100 mb-4">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-wallet text-orange-600 text-xl"></i>
+                            <h4 class="font-semibold text-xl">Budget Tracker</h4>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6">
+                        <div class="flex gap-2 mb-4">
+                            <input id="budget-amount" type="number" placeholder="Amount (€)" class="border border-slate-300 rounded-2xl px-4 py-3 w-28 text-base">
+                            <input id="budget-category" type="text" placeholder="Category" class="flex-1 border border-slate-300 rounded-2xl px-4 py-3 text-base">
+                            <button onclick="addExpense()" class="bg-orange-600 text-white px-5 py-3 rounded-2xl text-base font-medium">Add</button>
+                        </div>
+                        <div id="budget-list" class="space-y-2 text-base mb-3"></div>
+                        <div class="font-semibold text-lg">Total Spent: €<span id="budget-total">0</span></div>
+                    </div>
+                </details>
+
+                <!-- What's Included -->
+                <details class="bg-white rounded-3xl shadow border border-orange-100 mb-4">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-orange-600 text-xl"></i>
+                            <h4 class="font-semibold text-xl">What's Included</h4>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-base leading-relaxed">
+                        <ul class="space-y-1.5 list-disc list-inside text-slate-700">
+                            <li>3 nights at DOM Hotel, Rome – 4x Deluxe Room (25 sqm)</li>
+                            <li>Private Transfer from Rome Fiumicino Airport to Hotel</li>
+                            <li>Private Golf Cart Tour (3 hours)</li>
+                            <li>Private Half Day Vatican Tour (4 hours guide + one-way transfer)</li>
+                            <li>Private Ancient Rome Tour (3 hours guide + roundtrip transfers)</li>
+                            <li>Private Transfer from Hotel (Rome) to Hotel (Positano)</li>
+                            <li>5 nights at Torre Sponda, Positano – Cisterna & Casa Angelica</li>
+                            <li>Private Full Day Amalfi Coast Drive (8 hours) – From Positano</li>
+                            <li>Private Full Day Capri & Anacapri Discovery Tour (approx. 8 hours) – from Positano</li>
+                            <li>Private Transfer from Positano (accessible by road) to Naples Centrale Station</li>
+                            <li>Naples to Florence – First Class Train Tickets</li>
+                            <li>Private Transfer from Florence SMN Station to Hotel</li>
+                            <li>3 nights at Leone Blu Suites UNA Esperienze, Florence – 4x Suite (65 sqm)</li>
+                            <li>Private Half Day Morning Walking Tour of the Heart of Florence with Accademia & Uffizi (4 hours)</li>
+                            <li>Private Half Day Morning Tour to Pisa (4 hours)</li>
+                            <li>4 nights at Castello di Spaltenna, Gaiole in Chianti – 4x Deluxe Double Room (25 sqm)</li>
+                            <li>Private Transfer from Florence to Gaiole in Chianti</li>
+                            <li>Private Half Day Horseback Riding and Wine Tasting Tour in Chianti (5 hours)</li>
+                            <li>Private Off Road Wine Tour in Chianti (6 hours) – from Castellina in Chianti</li>
+                            <li>Private Tour of Siena and San Gimignano & Lunch in a Typical Trattoria (approx. 6 hours)</li>
+                            <li>3 nights at Villa e Palazzo Aminta Hotel, Stresa – 4x Deluxe Room with Side Lake View (22 sqm + 8 sqm balcony)</li>
+                            <li>Private Transfer from Gaiole in Chianti to Florence Train Station</li>
+                            <li>Florence to Milan – First Class Train tickets</li>
+                            <li>Private Full Day Stresa & Borromean Islands Guided Tour (approx. 6 hours)</li>
+                            <li>Private Full Day Lake Como Excursion (7-9 hours)</li>
+                            <li>Private Transfer from Hotel (Stresa) to Milan Malpensa Airport</li>
+                            <li>Hotel VAT, service charges, and breakfast</li>
+                        </ul>
+                        <div class="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-2xl text-amber-800 text-base leading-relaxed">
+                            <i class="fa-solid fa-triangle-exclamation mr-1"></i> Hotel city taxes are <strong>not included</strong> and must be paid locally upon checkout.
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Weather Forecast -->
+                <details class="bg-white rounded-3xl shadow border border-orange-100 mb-4" open>
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-cloud-sun text-orange-600 text-xl"></i>
+                            <h4 class="font-semibold text-xl">Weather Forecast</h4>
+                        </div>
+                    </summary>
+                    <div id="weather-forecast" class="px-6 pb-6 text-base leading-relaxed">
+                        <div class="text-slate-500">Loading...</div>
+                    </div>
+                </details>
+
+                <!-- Plug, Voltage & Time Zone -->
+                <details class="bg-white rounded-3xl shadow border border-orange-100 mb-4">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-plug text-orange-600 text-xl"></i>
+                            <h4 class="font-semibold text-xl">Plug, Voltage & Time Zone</h4>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-base leading-relaxed space-y-3">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-plug-circle-bolt text-orange-600 mt-1"></i>
+                            <div><strong>Power</strong> — Italy uses Type C, F and L plugs (2 round pins), 230V / 50Hz. Australian appliances (230-240V, 50Hz) generally work fine with just a plug adapter — a separate voltage converter usually isn't needed.</div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-clock text-orange-600 mt-1"></i>
+                            <div><strong>Time Zone</strong> — Italy is on CEST (UTC+2) during your trip. Australia doesn't observe daylight saving in May–June, so standard time zones apply: Italy is about <strong>8 hours behind</strong> Sydney/Melbourne/Brisbane (AEST) and about <strong>6 hours behind</strong> Perth (AWST) for the whole trip.</div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Quote Reference -->
+                <details class="bg-white rounded-3xl shadow border border-orange-100 mb-4">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-receipt text-orange-600 text-xl"></i>
+                            <h4 class="font-semibold text-xl">Quote Reference</h4>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-base leading-relaxed space-y-2 text-slate-700">
+                        <div><strong>Agency:</strong> Chirn Park Travel</div>
+                        <div><strong>Agent:</strong> Alisa McInnes</div>
+                        <div><strong>Email:</strong> <a href="mailto:alisa_mcinnes@chirnparktravel.com" class="text-blue-700 hover:underline">alisa_mcinnes@chirnparktravel.com</a></div>
+                        <div><strong>Quote Number:</strong> #M8AOFQ</div>
+                        <div><strong>Date Created:</strong> July 8, 2026</div>
+                        <div class="text-xs text-slate-500 pt-2 border-t">This reflects the original quote — check with your agent for the latest confirmed bookings, final balance due date, and train ticket issue dates.</div>
+                    </div>
+                </details>
+
+                <!-- Sync Across Devices -->
+                <details class="bg-white rounded-3xl shadow border border-orange-100 mb-4">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-arrows-rotate text-orange-600 text-xl"></i>
+                            <h4 class="font-semibold text-xl">Transfer to Another Device</h4>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-base leading-relaxed space-y-3">
+                        <p class="text-slate-600">Your notes, packing list, budget and checklists are only saved on this device. To move them to another phone or laptop: generate a transfer code here, then send it to yourself (Messages, email, AirDrop) and paste it into this same box on the other device.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="generateTransferCode()" class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-3 rounded-2xl text-base">Generate Transfer Code</button>
+                            <button onclick="copySyncCode()" class="bg-slate-100 hover:bg-slate-200 px-4 py-3 rounded-2xl text-base">Copy Code</button>
+                            <button onclick="applyTransferCode()" class="bg-slate-700 hover:bg-slate-800 text-white px-4 py-3 rounded-2xl text-base">Apply Pasted Code</button>
+                        </div>
+                        <textarea id="sync-code" rows="4" placeholder="Transfer code will appear here — or paste one from another device" class="w-full border border-slate-300 rounded-2xl px-4 py-2 text-xs font-mono"></textarea>
+                        <div id="sync-status" class="text-xs text-slate-500"></div>
+                    </div>
+                </details>
+
+                <!-- Transportation Summary -->
+                <details class="bg-white rounded-3xl shadow border border-orange-100">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-plane text-orange-600 text-xl"></i>
+                            <h4 class="font-semibold text-xl">Transportation Summary</h4>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-base leading-relaxed space-y-3">
+                        <div><strong>Rome → Positano:</strong> Private transfer (included)</div>
+                        <div><strong>Positano area:</strong> Ferries (Travelmar / NLG) + SITA buses; hydrofoil to Capri</div>
+                        <div><strong>Positano → Florence:</strong> Private transfer to Naples Centrale → First Class train Naples–Florence → private transfer to hotel</div>
+                        <div><strong>Florence → Chianti:</strong> Private transfer (included)</div>
+                        <div><strong>Chianti → Stresa:</strong> Private transfer to Florence station → First Class train Florence–Milan → private transfer to hotel</div>
+                        <div><strong>Stresa → Milan Malpensa Airport:</strong> Private transfer (Day 19 departure)</div>
+                        <div class="text-xs text-slate-500 pt-2 border-t">Train tickets are issued after final balance is paid; suggested times are subject to change based on availability.</div>
+                    </div>
+                </details>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-6 text-blue-900">Tap any day for full details, tours & interactive maps</h3>
+            <div id="days" class="space-y-4"></div>
+
+            <!-- Resources Section -->
+            <div id="resources" class="mt-16 pt-8 border-t">
+                <h3 class="text-3xl heading-font font-bold text-blue-900 mb-6 flex items-center gap-3">
+                    <i class="fa-solid fa-link text-orange-600"></i> Helpful Resources & Links
+                </h3>
+                <p class="text-slate-600 mb-8">Quick access to ferry schedules, bus info, maps, and official tourism sites for your trip.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Ferries -->
+                    <div class="bg-white p-6 rounded-3xl shadow border border-orange-100">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-solid fa-ship text-2xl text-blue-700"></i>
+                            <h4 class="font-semibold text-xl">Ferries & Hydrofoils</h4>
+                        </div>
+                        <ul class="space-y-3 text-base">
+                            <li><a href="https://www.positano.com/en/ferry-schedule" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Positano Ferry Schedules</a></li>
+                            <li><a href="https://www.ravello.com/ferry-schedule/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Amalfi Coast Ferry Timetables</a></li>
+                            <li><a href="https://www.travelmar.it/en/index" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Travelmar (Main Ferry Operator)</a></li>
+                            <li><a href="https://www.nlgsrl.it/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ NLG Ferries</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Buses -->
+                    <div class="bg-white p-6 rounded-3xl shadow border border-orange-100">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-solid fa-bus text-2xl text-green-700"></i>
+                            <h4 class="font-semibold text-xl">Buses (SITA Sud)</h4>
+                        </div>
+                        <ul class="space-y-3 text-base">
+                            <li><a href="https://www.positano.com/en/e/how-to-get-around" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ How to Get Around (Positano.com)</a></li>
+                            <li><a href="https://www.ravello.com/sita-bus-schedule/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Ravello SITA Bus Schedules</a></li>
+                            <li><a href="https://moovitapp.com/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Moovit App (Real-time Public Transport)</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Maps -->
+                    <div class="bg-white p-6 rounded-3xl shadow border border-orange-100">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-solid fa-map-marked text-2xl text-red-600"></i>
+                            <h4 class="font-semibold text-xl">Interactive Maps</h4>
+                        </div>
+                        <ul class="space-y-3 text-base">
+                            <li><a href="https://www.google.com/maps/search/?api=1&query=Positano+Italy" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Positano on Google Maps</a></li>
+                            <li><a href="https://www.google.com/maps/search/?api=1&query=Amalfi+Italy" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Amalfi on Google Maps</a></li>
+                            <li><a href="https://www.google.com/maps/search/?api=1&query=Capri+Italy" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Capri on Google Maps</a></li>
+                            <li><a href="https://www.google.com/maps/search/?api=1&query=Sentiero+degli+Dei+Path+of+the+Gods" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Path of the Gods Trail</a></li>
+                            <li><a href="https://www.google.com/maps/search/?api=1&query=Colosseum+Rome" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Colosseum & Ancient Rome</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- General Tourism -->
+                    <div class="bg-white p-6 rounded-3xl shadow border border-orange-100">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-solid fa-globe text-2xl text-purple-700"></i>
+                            <h4 class="font-semibold text-xl">Official Tourism & Info</h4>
+                        </div>
+                        <ul class="space-y-3 text-base">
+                            <li><a href="https://www.positano.com/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Positano Official Tourism</a></li>
+                            <li><a href="https://www.amalficoast.com/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Amalfi Coast Tourism (English)</a></li>
+                            <li><a href="https://www.italia.it/en" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Official Italy Tourism Portal</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Your Trip Specific -->
+                    <div class="bg-white p-6 rounded-3xl shadow border border-orange-100">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-solid fa-suitcase text-2xl text-amber-600"></i>
+                            <h4 class="font-semibold text-xl">Your Trip Tools</h4>
+                        </div>
+                        <ul class="space-y-3 text-base">
+                            <li><a href="https://translate.google.com/?sl=en&tl=it" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Google Translate (Italian)</a></li>
+                            <li><a href="https://www.xe.com/currencyconverter/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Live Currency Converter (EUR/AUD)</a></li>
+                            <li><a href="https://www.accuweather.com/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Weather (Check before ferry days)</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Dining & Reservations -->
+                    <div class="bg-white p-6 rounded-3xl shadow border border-orange-100">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-solid fa-utensils text-2xl text-rose-600"></i>
+                            <h4 class="font-semibold text-xl">Dining & Reservations</h4>
+                        </div>
+                        <ul class="space-y-3 text-base">
+                            <li><a href="https://www.thefork.it/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ TheFork (Book Restaurants in Italy)</a></li>
+                            <li><a href="https://www.opentable.it/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ OpenTable Italy</a></li>
+                            <li><a href="https://guide.michelin.com/it/en" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Michelin Guide Italy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Money, Tax & Tipping -->
+                    <div class="bg-white p-6 rounded-3xl shadow border border-orange-100">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-solid fa-sack-dollar text-2xl text-emerald-700"></i>
+                            <h4 class="font-semibold text-xl">Money, Tax & Tipping</h4>
+                        </div>
+                        <ul class="space-y-3 text-base">
+                            <li><a href="https://www.globalblue.com/en/shoppers/how-to-shop-tax-free/destinations/italy/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ VAT Tax Refund Guide (Global Blue)</a></li>
+                            <li><a href="https://www.ricksteves.com/travel-tips/money/tipping-in-europe" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Tipping Etiquette in Italy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Staying Connected -->
+                    <div class="bg-white p-6 rounded-3xl shadow border border-orange-100">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-solid fa-signal text-2xl text-indigo-600"></i>
+                            <h4 class="font-semibold text-xl">Staying Connected</h4>
+                        </div>
+                        <ul class="space-y-3 text-base">
+                            <li><a href="https://www.airalo.com/italy-esim" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Airalo eSIM (Italy)</a></li>
+                            <li><a href="https://esim.holafly.com/esim-italy/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Holafly eSIM (Italy)</a></li>
+                            <li><a href="https://en.wikivoyage.org/wiki/Italian_phrasebook" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Italian Phrases Cheat Sheet</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Airports, Stations & Flights -->
+                    <div class="bg-white p-6 rounded-3xl shadow border border-orange-100">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-solid fa-plane-departure text-2xl text-sky-600"></i>
+                            <h4 class="font-semibold text-xl">Airports, Stations & Flights</h4>
+                        </div>
+                        <ul class="space-y-3 text-base">
+                            <li><a href="https://www.adr.it/web/aeroporti-di-roma-en/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Rome Fiumicino Airport</a></li>
+                            <li><a href="https://www.milanomalpensa-airport.com/en" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Milan Malpensa Airport</a></li>
+                            <li><a href="https://www.trenitalia.com/en.html" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Trenitalia (Train Stations & Tickets)</a></li>
+                            <li><a href="https://www.flightradar24.com/" class="resource-link flex items-center gap-2 text-blue-700 hover:text-blue-900 py-1">→ Flight Status Tracker</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-white p-8 pb-36 text-center text-base text-slate-500 border-t">
+            Chirn Park Travel • Private Luxury Tour • All details from your original itinerary • Updated July 2026
+        </footer>
+    </div>
+
+    <!-- Floating SOS quick-access button -->
+    <button onclick="openEmergencyInfo()" aria-label="Emergency & Medical Info" 
+            class="fixed right-4 z-50 bg-red-600 hover:bg-red-700 text-white rounded-full w-14 h-14 shadow-lg flex flex-col items-center justify-center leading-none"
+            style="bottom: calc(70px + env(safe-area-inset-bottom, 0px));">
+        <i class="fa-solid fa-kit-medical text-lg"></i>
+        <span class="text-[10px] font-bold mt-0.5">SOS</span>
+    </button>
+
+    <!-- Bottom Quick-Nav Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-t border-orange-100 flex justify-around items-center px-1 shadow-[0_-4px_12px_rgba(0,0,0,0.06)]" style="padding-bottom: env(safe-area-inset-bottom, 0px);">
+        <button onclick="document.getElementById('itinerary').scrollIntoView({behavior:'smooth', block:'start'})" class="flex flex-col items-center gap-0.5 py-2.5 px-1 flex-1 text-slate-600 hover:text-orange-600 min-h-[52px] justify-center">
+            <i class="fa-solid fa-map-location-dot text-lg"></i>
+            <span class="text-[10px] font-medium">Itinerary</span>
+        </button>
+        <button onclick="document.getElementById('diary').scrollIntoView({behavior:'smooth', block:'start'})" class="flex flex-col items-center gap-0.5 py-2.5 px-1 flex-1 text-slate-600 hover:text-orange-600 min-h-[52px] justify-center">
+            <i class="fa-solid fa-book text-lg"></i>
+            <span class="text-[10px] font-medium">Diary</span>
+        </button>
+        <button onclick="document.getElementById('tools').scrollIntoView({behavior:'smooth', block:'start'})" class="flex flex-col items-center gap-0.5 py-2.5 px-1 flex-1 text-slate-600 hover:text-orange-600 min-h-[52px] justify-center">
+            <i class="fa-solid fa-toolbox text-lg"></i>
+            <span class="text-[10px] font-medium">Tools</span>
+        </button>
+        <button onclick="document.getElementById('resources').scrollIntoView({behavior:'smooth', block:'start'})" class="flex flex-col items-center gap-0.5 py-2.5 px-1 flex-1 text-slate-600 hover:text-orange-600 min-h-[52px] justify-center">
+            <i class="fa-solid fa-link text-lg"></i>
+            <span class="text-[10px] font-medium">Resources</span>
+        </button>
+        <button onclick="toggleContrastMode()" class="flex flex-col items-center gap-0.5 py-2.5 px-1 flex-1 text-slate-600 hover:text-orange-600 min-h-[52px] justify-center">
+            <i class="fa-solid fa-circle-half-stroke text-lg"></i>
+            <span class="text-[10px] font-medium">Contrast</span>
+        </button>
+        <button onclick="toggleDarkMode()" class="flex flex-col items-center gap-0.5 py-2.5 px-1 flex-1 text-slate-600 hover:text-orange-600 min-h-[52px] justify-center">
+            <i class="fa-solid fa-moon text-lg"></i>
+            <span class="text-[10px] font-medium">Dark</span>
+        </button>
+    </nav>
+
+    <script>
+        const fullItinerary = [
+            {
+                day: "Days 1-3",
+                dateRange: "Wed, May 19 – Fri, May 21",
+                place: "Rome",
+                stay: "DOM Hotel - 4x Deluxe Room (25 sqm), 5★",
+                website: "https://www.domhotelroma.com",
+                nearestHospital: "Ospedale Fatebenefratelli, Isola Tiberina — 24/7 ER",
+                tours: "Private Golf Cart Tour (3h), Private Half Day Vatican Tour with skip-the-line (4h guide + one-way transfer), Private Ancient Rome Tour (Colosseum, Palatine, Forum with skip-the-line, 3h guide + roundtrip transfers)",
+                map: "Historic Center: Via Giulia, Pantheon, Piazza Navona, Colosseum, Vatican Museums & St. Peter's Basilica",
+                mapLinks: [
+                    { label: "Rome Historic Center", url: "https://www.google.com/maps/search/?api=1&query=Rome+Historic+Center" },
+                    { label: "Colosseum & Ancient Rome", url: "https://www.google.com/maps/search/?api=1&query=Colosseum+Rome" },
+                    { label: "Vatican Museums & St. Peter's", url: "https://www.google.com/maps/search/?api=1&query=Vatican+Museums+Rome" }
+                ],
+                dayByDay: [
+                    "Day 1 (Wed, May 19): Private transfer from Rome Fiumicino Airport to hotel. Check in to DOM Hotel.",
+                    "Day 2 (Thu, May 20): Private Golf Cart Tour (3h). Private Half Day Vatican Tour (4h guide + one-way transfer). Note: Vatican closed Sundays; original passport required for entry; strict dress code (shoulders/knees covered).",
+                    "Day 3 (Fri, May 21): Private Ancient Rome Tour — Colosseum, Palatine Hill, Roman Forum (3h guide + roundtrip transfers). Passport required; possible wait even with skip-the-line tickets."
+                ]
+            },
+            {
+                day: "Days 4-8",
+                dateRange: "Sat, May 22 – Wed, May 26",
+                place: "Positano (Amalfi Coast)",
+                stay: "Torre Sponda - Private Family Estate, Cisterna & Casa Angelica accommodations, Pool & Beach Access",
+                website: "https://www.torresponda-positano.it/en/",
+                nearestHospital: "Amalfi Coast Hospital, Castiglione (Ravello) — ~20 min drive, 24/7 ER",
+                tours: "Private Full Day Amalfi Coast Drive (Positano, Amalfi, Ravello - 8h), Private Full Day Capri & Anacapri Discovery (Hydrofoil + Private Taxi Tour - approx 8h), 2 free days at leisure",
+                map: "Amalfi Coastline: Cliffside village, Blue Grotto, Capri Piazzetta, Villa San Michele, Beach & Pool time",
+                mapLinks: [
+                    { label: "Positano Center & Beaches", url: "https://www.google.com/maps/search/?api=1&query=Positano+Italy" },
+                    { label: "Amalfi Town", url: "https://www.google.com/maps/search/?api=1&query=Amalfi+Italy" },
+                    { label: "Capri Island", url: "https://www.google.com/maps/search/?api=1&query=Capri+Italy" },
+                    { label: "Path of the Gods Trailhead", url: "https://www.google.com/maps/search/?api=1&query=Sentiero+degli+Dei+Path+of+the+Gods" }
+                ],
+                dayByDay: [
+                    "Day 4 (Sat, May 22): After breakfast, check out of Rome hotel. Private transfer from Rome to Positano (Torre Sponda).",
+                    "Day 5 (Sun, May 23): Private Full Day Amalfi Coast Drive (8h) — Positano, Amalfi, Ravello. Lunch & entrance tickets not included.",
+                    "Day 6 (Mon, May 24): Free day at leisure — villa pool/beach, boutiques, sunset aperitivo.",
+                    "Day 7 (Tue, May 25): Private Full Day Capri & Anacapri Discovery Tour (approx 8h) via public hydrofoil + private taxi tour. Blue Grotto, Villa San Michele entrance not included. Original passport required for boarding.",
+                    "Day 8 (Wed, May 26): Free day at leisure — final day in Positano before onward travel."
+                ]
+            },
+            {
+                day: "Days 9-11",
+                dateRange: "Thu, May 27 – Sat, May 29",
+                place: "Florence",
+                stay: "Leone Blu Suites UNA Esperienze - 4x Suite (65 sqm), 5★ Historic Palace",
+                website: "https://www.gruppouna.it/en/esperienze/leone-blu-suites",
+                nearestHospital: "Ospedale Santa Maria Nuova, historic center — 24/7 ER",
+                tours: "Private Half Day Walking Tour Heart of Florence with Accademia & Uffizi (4h, skip-the-line), Private Half Day Tour to Pisa (4h)",
+                map: "Renaissance Florence: Duomo, Baptistery, Uffizi, Accademia (David), Piazza della Signoria, Leaning Tower of Pisa",
+                mapLinks: [
+                    { label: "Florence Historic Center", url: "https://www.google.com/maps/search/?api=1&query=Florence+Italy" },
+                    { label: "Uffizi Gallery & Piazza della Signoria", url: "https://www.google.com/maps/search/?api=1&query=Uffizi+Gallery+Florence" },
+                    { label: "Accademia Gallery (David)", url: "https://www.google.com/maps/search/?api=1&query=Accademia+Gallery+Florence" },
+                    { label: "Leaning Tower of Pisa", url: "https://www.google.com/maps/search/?api=1&query=Leaning+Tower+of+Pisa" }
+                ],
+                dayByDay: [
+                    "Day 9 (Thu, May 27): Check out of Positano. Private transfer to Naples Centrale Station → first class train Naples to Florence → private transfer to hotel. Note: train tickets issued after final balance is paid; times subject to change.",
+                    "Day 10 (Fri, May 28): Private Half Day Walking Tour of Florence with Accademia & Uffizi (4h). Tour doesn't run Mondays or the first Sunday of the month, plus select public holidays. Passport required for entry.",
+                    "Day 11 (Sat, May 29): Private Half Day Tour to Pisa (4h) — Piazza dei Miracoli, Leaning Tower. Baptistry entrance & lunch not included; strict dress code for religious sites."
+                ]
+            },
+            {
+                day: "Days 12-15",
+                dateRange: "Sun, May 30 – Wed, Jun 2",
+                place: "Gaiole in Chianti (Tuscany)",
+                stay: "Castello di Spaltenna - 4x Deluxe Double Room (25 sqm), 5★ Medieval Castle with Spa & Michelin Restaurant",
+                website: "https://www.spaltenna.it/en/",
+                nearestHospital: "Policlinico Le Scotte, Siena — ~25 min drive, 24/7 ER",
+                tours: "Private Half Day Horseback Riding & Wine Tasting (5h), Private Off Road Wine Tour in Chianti with Land Rover (6h, from Castellina in Chianti), Private Tour of Siena & San Gimignano with Lunch (approx 6h)",
+                map: "Chianti Hills: Rolling vineyards, Siena (Piazza del Campo, Duomo, Palio), San Gimignano medieval towers, Wine estates & organic farms",
+                mapLinks: [
+                    { label: "Gaiole in Chianti & Castello di Spaltenna", url: "https://www.google.com/maps/search/?api=1&query=Gaiole+in+Chianti+Italy" },
+                    { label: "Siena Historic Center", url: "https://www.google.com/maps/search/?api=1&query=Siena+Italy" },
+                    { label: "San Gimignano Towers", url: "https://www.google.com/maps/search/?api=1&query=San+Gimignano+Italy" },
+                    { label: "Chianti Wine Region", url: "https://www.google.com/maps/search/?api=1&query=Chianti+Classico+Wine+Region" }
+                ],
+                dayByDay: [
+                    "Day 12 (Sun, May 30): Check out of Florence. Private transfer from Florence to Gaiole in Chianti (Castello di Spaltenna).",
+                    "Day 13 (Mon, May 31): Private Half Day Horseback Riding & Wine Tasting Tour (5h) — 1h horse riding, winery visit with olive oil tasting and Tuscan lunch. Roundtrip transfer to meeting point not included.",
+                    "Day 14 (Tue, Jun 1): Private Off Road Wine Tour in Chianti by Land Rover Defender (6h, departs from Castellina in Chianti) — 3 winery visits with wine & olive oil tastings and lunch.",
+                    "Day 15 (Wed, Jun 2): Private Tour of Siena & San Gimignano with lunch in a typical trattoria (approx 6h) — Piazza del Campo, Duomo di Siena, free time in San Gimignano. Entrance tickets not included."
+                ]
+            },
+            {
+                day: "Days 16-18",
+                dateRange: "Thu, Jun 3 – Sat, Jun 5",
+                place: "Stresa, Lake Maggiore",
+                stay: "Villa e Palazzo Aminta Hotel - 4x Deluxe Room with Side Lake View + Balcony (22 sqm + 8 sqm balcony), 5★ Leading Hotels of the World",
+                website: "https://www.villa-aminta.it",
+                nearestHospital: "Ospedale Castelli, Verbania — ~15 min drive, 24/7 ER",
+                tours: "Private Full Day Stresa & Borromean Islands Guided Tour (approx 6h with private boat), Private Full Day Lake Como Excursion (7-9h)",
+                map: "Lake Maggiore: Stresa promenade, Borromean Islands (Isola Bella, Madre, Pescatori), Lake Como, Bellagio, Villa Carlotta",
+                mapLinks: [
+                    { label: "Stresa & Lake Maggiore", url: "https://www.google.com/maps/search/?api=1&query=Stresa+Lake+Maggiore+Italy" },
+                    { label: "Borromean Islands", url: "https://www.google.com/maps/search/?api=1&query=Borromean+Islands+Italy" },
+                    { label: "Lake Como & Bellagio", url: "https://www.google.com/maps/search/?api=1&query=Lake+Como+Italy" }
+                ],
+                dayByDay: [
+                    "Day 16 (Thu, Jun 3): Check out of Gaiole in Chianti. Private transfer to Florence train station → first class train Florence to Milan → private transfer to hotel in Stresa.",
+                    "Day 17 (Fri, Jun 4): Private Full Day Stresa & Borromean Islands Guided Tour (approx 6h) — Isola Bella, Isola Madre, Isola dei Pescatori by private boat. Entrance tickets & lunch not included.",
+                    "Day 18 (Sat, Jun 5): Private Full Day Lake Como Excursion (7-9h) — Menaggio, Tremezzo, Villa Carlotta, Cernobbio, Como, Bellagio. Original passport required for boarding; order of visits may change based on hotel location."
+                ]
+            },
+            {
+                day: "Day 19",
+                dateRange: "Sun, Jun 6",
+                place: "Departure",
+                stay: "Check out of Villa e Palazzo Aminta Hotel",
+                tours: "No activities scheduled — departure day",
+                map: "Private transfer from hotel in Stresa to Milan Malpensa Airport for your flight home.",
+                mapLinks: [
+                    { label: "Milan Malpensa Airport", url: "https://www.google.com/maps/search/?api=1&query=Milan+Malpensa+Airport" }
+                ],
+                dayByDay: [
+                    "Day 19 (Sun, Jun 6): After breakfast, check out of hotel. Private transfer from Stresa to Milan Malpensa Airport."
+                ]
+            }
+        ];
+
+        function renderDays() {
+            const container = document.getElementById('days');
+            container.innerHTML = fullItinerary.map((item, index) => {
+                const today = isToday(item);
+                return `
+                <div onclick="showDetailsByIndex(${index})" 
+                     class="day-card bg-white p-8 rounded-3xl shadow-md hover:shadow-xl cursor-pointer border ${today ? 'border-4 border-green-400' : 'border-orange-100'}">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span class="text-amber-600 font-mono text-sm">${item.day}${item.dateRange ? ' • ' + item.dateRange : ''}</span>
+                                ${today ? '<span class="bg-green-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">TODAY</span>' : ''}
+                            </div>
+                            <h3 class="text-3xl font-semibold mt-1 text-blue-900">${item.place}</h3>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm text-slate-500">Tap for full details & maps</div>
+                            <i class="fa-solid fa-map-location-dot text-2xl text-orange-600 mt-2"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-slate-600">
+                        <strong>${item.place === 'Departure' ? 'Note' : 'Stay'}:</strong> ${item.stay.split(',')[0]}
+                    </div>
+                </div>
+            `;
+            }).join('');
+        }
+
+        function showDetailsByIndex(index) {
+            const item = fullItinerary[index];
+            showDetails(item, index);
+        }
+
+        function showDetails(item, index) {
+            const { day, place, stay, tours, map, mapLinks, dateRange, website, dayByDay, nearestHospital } = item;
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4';
+            
+            let mapButtonsHTML = '';
+            if (mapLinks && mapLinks.length > 0) {
+                mapButtonsHTML = mapLinks.map(link => 
+                    `<a href="${link.url}" class="block w-full text-center bg-orange-100 hover:bg-orange-200 text-orange-800 font-medium py-3 px-4 rounded-2xl mb-2 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-map-marker-alt"></i> ${link.label}
+                    </a>`
+                ).join('');
+            }
+
+            let dayByDayHTML = '';
+            if (dayByDay && dayByDay.length > 0) {
+                dayByDayHTML = `
+                        <div>
+                            <div class="font-semibold text-lg mb-3 text-blue-900 flex items-center gap-2">
+                                <i class="fa-solid fa-list-check"></i> Day-by-Day Breakdown
+                            </div>
+                            <div class="space-y-3">
+                                ${dayByDay.map(d => `<div class="text-slate-700 text-base leading-relaxed bg-slate-50 p-4 rounded-2xl">${d}</div>`).join('')}
+                            </div>
+                        </div>`;
+            }
+
+            const websiteHTML = website
+                ? `<a href="${website}" class="text-blue-700 hover:underline text-sm">${website.replace(/^https?:\/\//, '')}</a>`
+                : '';
+
+            modal.innerHTML = `
+                <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[92vh] overflow-auto shadow-2xl">
+                    <div class="med-sea text-white p-6 rounded-t-3xl">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="text-sm opacity-80">${day}${dateRange ? ' • ' + dateRange : ''}</div>
+                                <h3 class="text-3xl font-bold">${place}</h3>
+                            </div>
+                            <button onclick="this.closest('.fixed').remove()" class="text-4xl leading-none hover:opacity-75">&times;</button>
+                        </div>
+                    </div>
+                    <div class="p-8 space-y-8">
+                        <div>
+                            <div class="font-semibold text-lg mb-3 text-blue-900 flex items-center gap-2">
+                                <i class="fa-solid fa-hotel"></i> Accommodation
+                            </div>
+                            <div class="text-slate-700">${stay}</div>
+                            ${websiteHTML ? `<div class="mt-2">${websiteHTML}</div>` : ''}
+                            ${nearestHospital ? `<div class="mt-3 text-sm bg-red-50 border border-red-200 rounded-2xl p-3 flex items-start gap-2"><i class="fa-solid fa-kit-medical text-red-600 mt-0.5"></i><span><strong>Nearest hospital:</strong> ${nearestHospital}</span></div>` : ''}
+                        </div>
+
+                        ${dayByDayHTML}
+                        
+                        <div>
+                            <div class="font-semibold text-lg mb-3 text-blue-900 flex items-center gap-2">
+                                <i class="fa-solid fa-calendar-check"></i> Included Tours & Activities
+                            </div>
+                            <div class="text-slate-700 text-base leading-relaxed whitespace-pre-line">${tours}</div>
+                        </div>
+                        
+                        <div>
+                            <div class="font-semibold text-lg mb-3 text-blue-900 flex items-center gap-2">
+                                <i class="fa-solid fa-map-marked"></i> Local Area Highlights
+                            </div>
+                            <div class="text-slate-700 text-base leading-relaxed mb-4">${map}</div>
+                            
+                            <div class="bg-amber-50 border border-amber-200 p-5 rounded-2xl">
+                                <div class="font-medium text-amber-800 mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-directions"></i> Quick Map Links
+                                </div>
+                                <div class="space-y-2">
+                                    ${mapButtonsHTML}
+                                    
+                                    <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(stay)}" 
+                                       class="block w-full text-center bg-blue-100 hover:bg-blue-200 text-blue-800 font-medium py-3 px-4 rounded-2xl mb-2 transition flex items-center justify-center gap-2">
+                                        <i class="fa-solid fa-hotel"></i> View Accommodation on Map
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t flex justify-end gap-3 bg-slate-50 rounded-b-3xl">
+                        <button onclick="downloadICS(${index})" 
+                                class="px-6 py-3 rounded-2xl bg-orange-600 hover:bg-orange-700 text-white font-medium flex items-center gap-2">
+                            <i class="fa-regular fa-calendar-plus"></i> Add to Calendar
+                        </button>
+                        <button onclick="this.closest('.fixed').remove()" 
+                                class="px-8 py-3 rounded-2xl bg-white border hover:bg-slate-100 font-medium">Close</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        function icsDate(date) {
+            return date.toISOString().split('T')[0].replace(/-/g, '');
+        }
+
+        function downloadICS(index) {
+            const item = fullItinerary[index];
+            const match = item.day.match(/Days?\s*(\d+)(?:-(\d+))?/i);
+            if (!match) return;
+            const startDayNum = parseInt(match[1]);
+            const endDayNum = match[2] ? parseInt(match[2]) : startDayNum;
+
+            const startDate = new Date(TRIP_START.getTime() + (startDayNum - 1) * 86400000);
+            const checkoutDate = new Date(TRIP_START.getTime() + endDayNum * 86400000);
+
+            const escapeICS = (str) => (str || '').replace(/[,;]/g, '\\$&').replace(/\n/g, '\\n');
+
+            const ics = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//Italy Grand Tour 2027//EN',
+                'BEGIN:VEVENT',
+                `UID:${item.place.replace(/\s+/g, '-')}-${startDayNum}-2027@italy-grand-tour`,
+                `DTSTAMP:${icsDate(new Date())}T000000Z`,
+                `DTSTART;VALUE=DATE:${icsDate(startDate)}`,
+                `DTEND;VALUE=DATE:${icsDate(checkoutDate)}`,
+                `SUMMARY:${escapeICS(item.place + ' — ' + item.day)}`,
+                `DESCRIPTION:${escapeICS('Stay: ' + item.stay + '\\n\\nTours: ' + item.tours)}`,
+                `LOCATION:${escapeICS(item.place)}`,
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\r\n');
+
+            const blob = new Blob([ics], { type: 'text/calendar' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${item.place.replace(/\s+/g, '-')}-2027.ics`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Diary Feature (Collapsible)
+        function renderDiary() {
+            const container = document.getElementById('diary-days');
+            
+            container.innerHTML = fullItinerary.map(item => {
+                const key = item.place.toLowerCase().replace(/\s+/g, '');
+                return `
+                    <details class="bg-white rounded-3xl shadow border border-orange-100">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                            <div>
+                                <span class="text-amber-600 font-mono text-sm">${item.day}</span>
+                                <h4 class="font-semibold text-xl">${item.place}</h4>
+                            </div>
+                            <i class="fa-solid fa-chevron-down text-orange-600 transition-transform"></i>
+                        </summary>
+                        <div class="px-6 pb-6">
+                            <textarea id="note-${key}" 
+                                      class="w-full h-28 p-4 border border-slate-200 rounded-2xl focus:outline-none focus:border-orange-400"
+                                      placeholder="What did you do in ${item.place}?"></textarea>
+                        </div>
+                    </details>
+                `;
+            }).join('');
+
+            loadNotes();
+
+            fullItinerary.forEach(item => {
+                const key = item.place.toLowerCase().replace(/\s+/g, '');
+                const textarea = document.getElementById(`note-${key}`);
+                if (textarea) {
+                    textarea.addEventListener('input', () => {
+                        localStorage.setItem(`note-${key}`, textarea.value);
+                    });
+                }
+            });
+
+            const general = document.getElementById('general-notes');
+            if (general) {
+                general.addEventListener('input', () => {
+                    localStorage.setItem('general-trip-notes', general.value);
+                });
+            }
+        }
+
+        function loadNotes() {
+            fullItinerary.forEach(item => {
+                const key = item.place.toLowerCase().replace(/\s+/g, '');
+                const textarea = document.getElementById(`note-${key}`);
+                if (textarea) {
+                    const saved = localStorage.getItem(`note-${key}`);
+                    if (saved) textarea.value = saved;
+                }
+            });
+
+            const general = document.getElementById('general-notes');
+            if (general) {
+                const saved = localStorage.getItem('general-trip-notes');
+                if (saved) general.value = saved;
+            }
+        }
+
+        function exportNotes() {
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('en-AU', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            const timeStr = now.toLocaleTimeString('en-AU', { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+
+            let content = `Italy Grand Tour 2027 - Full Trip Export\n`;
+            content += `Exported: ${dateStr} at ${timeStr}\n`;
+            content += `=====================================\n\n`;
+
+            const general = document.getElementById('general-notes').value.trim();
+            content += "GENERAL TRIP NOTES\n------------------\n";
+            content += (general || "(none)") + "\n\n";
+
+            content += "DIARY BY DESTINATION\n---------------------\n";
+            let anyDayNotes = false;
+            fullItinerary.forEach(item => {
+                const key = item.place.toLowerCase().replace(/\s+/g, '');
+                const note = document.getElementById(`note-${key}`).value.trim();
+                if (note) {
+                    anyDayNotes = true;
+                    content += `${item.day} - ${item.place}\n`;
+                    content += note + "\n\n";
+                }
+            });
+            if (!anyDayNotes) content += "(No day notes written yet)\n\n";
+
+            content += "PACKING LIST\n------------\n";
+            getPackingItems().forEach(item => {
+                content += `[${item.checked ? 'x' : ' '}] ${item.text}\n`;
+            });
+            content += "\n";
+
+            content += "DOCUMENTS CHECKLIST\n-------------------\n";
+            const docsChecked = getDocumentsChecked();
+            documentsList.forEach((doc, i) => {
+                content += `[${docsChecked[i] ? 'x' : ' '}] ${doc}\n`;
+            });
+            content += "\n";
+
+            const contactsNotes = (document.getElementById('contacts-notes').value || '').trim();
+            const insuranceInfo = (document.getElementById('insurance-info')?.value || '').trim();
+            const medicalNotes = (document.getElementById('medical-notes')?.value || '').trim();
+            content += "TRAVEL INSURANCE\n-----------------\n";
+            content += (insuranceInfo || "(not added)") + "\n\n";
+            content += "PERSONAL MEDICAL NOTES\n-----------------------\n";
+            content += (medicalNotes || "(none)") + "\n\n";
+            content += "CONTACT NOTES\n-------------\n";
+            content += (contactsNotes || "(none)") + "\n\n";
+
+            content += "BUDGET\n------\n";
+            const expenses = JSON.parse(localStorage.getItem('budgetExpenses')) || [];
+            if (expenses.length) {
+                expenses.forEach(e => content += `${e.date} — ${e.category}: €${e.amount}\n`);
+                const total = expenses.reduce((sum, e) => sum + e.amount, 0);
+                content += `\nTotal Spent: €${total.toFixed(2)}\n`;
+            } else {
+                content += "(No expenses logged)\n";
+            }
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Italy-Tour-2027-Export-${now.toISOString().split('T')[0]}.txt`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // === HELPER TOOLS ===
+        function getPackingItems() {
+    let items = JSON.parse(localStorage.getItem('packingList')) || [
+        "Passport & Documents", "Travel Insurance", "Moon Boot / Orthotics",
+        "Compression socks", "Comfortable walking shoes", "Sunscreen & Hat",
+        "Power bank & adapters", "Medications", "Phone + charger"
+    ];
+    // Migrate old string-only format to {text, checked} objects
+    items = items.map(item => typeof item === 'string' ? { text: item, checked: false } : item);
+    return items;
+}
+
+function savePackingItems(items) {
+    localStorage.setItem('packingList', JSON.stringify(items));
+}
+
+function renderPackingList() {
+    const container = document.getElementById('packing-list');
+    let items = getPackingItems();
+
+    container.innerHTML = items.map((item, index) => {
+        return `
+            <div class="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-2xl">
+                <input type="checkbox" id="pack-${index}" data-index="${index}" class="pack-check w-6 h-6 accent-orange-600" ${item.checked ? 'checked' : ''}>
+                <label for="pack-${index}" class="flex-1 ${item.checked ? 'line-through text-slate-400' : ''}">${item.text}</label>
+                <button data-index="${index}" class="remove-btn text-red-400 hover:text-red-600 text-2xl leading-none">×</button>
+            </div>
+        `;
+    }).join('');
+
+    container.querySelectorAll('.remove-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            removePackingItem(parseInt(this.getAttribute('data-index')));
+        });
+    });
+
+    container.querySelectorAll('.pack-check').forEach(cb => {
+        cb.addEventListener('change', function() {
+            const idx = parseInt(this.getAttribute('data-index'));
+            let items = getPackingItems();
+            items[idx].checked = this.checked;
+            savePackingItems(items);
+            renderPackingList();
+        });
+    });
+}
+
+function addPackingItem() {
+    const input = document.getElementById('new-packing-item');
+    if (!input.value.trim()) return;
+
+    let items = getPackingItems();
+    items.push({ text: input.value.trim(), checked: false });
+    savePackingItems(items);
+    input.value = '';
+    renderPackingList();
+}
+
+function removePackingItem(index) {
+    let items = getPackingItems();
+    items.splice(index, 1);
+    savePackingItems(items);
+    renderPackingList();
+}
+
+        const documentsList = ["Passport (valid 6+ months)", "Travel Insurance Policy", "Medical letter / prescriptions", "Hotel & Tour confirmations", "Flight / Transfer bookings", "Credit cards + cash"];
+
+        function getDocumentsChecked() {
+            return JSON.parse(localStorage.getItem('documentsChecked')) || {};
+        }
+
+        function renderDocumentsList() {
+            const container = document.getElementById('documents-list');
+            const checked = getDocumentsChecked();
+            container.innerHTML = documentsList.map((doc, i) => `
+                <div class="flex items-center gap-3 p-2">
+                    <input type="checkbox" id="doc-${i}" data-index="${i}" class="doc-check w-6 h-6 accent-orange-600" ${checked[i] ? 'checked' : ''}>
+                    <label for="doc-${i}" class="${checked[i] ? 'line-through text-slate-400' : ''}">${doc}</label>
+                </div>
+            `).join('');
+
+            container.querySelectorAll('.doc-check').forEach(cb => {
+                cb.addEventListener('change', function() {
+                    const idx = this.getAttribute('data-index');
+                    const state = getDocumentsChecked();
+                    state[idx] = this.checked;
+                    localStorage.setItem('documentsChecked', JSON.stringify(state));
+                    renderDocumentsList();
+                });
+            });
+        }
+
+        function addExpense() {
+            const amount = parseFloat(document.getElementById('budget-amount').value);
+            const category = document.getElementById('budget-category').value.trim() || "Other";
+            if (!amount) return;
+
+            let expenses = JSON.parse(localStorage.getItem('budgetExpenses')) || [];
+            expenses.push({ amount, category, date: new Date().toISOString().split('T')[0] });
+            localStorage.setItem('budgetExpenses', JSON.stringify(expenses));
+
+            document.getElementById('budget-amount').value = '';
+            document.getElementById('budget-category').value = '';
+            renderBudget();
+        }
+
+        function renderBudget() {
+            const list = document.getElementById('budget-list');
+            const totalEl = document.getElementById('budget-total');
+            let expenses = JSON.parse(localStorage.getItem('budgetExpenses')) || [];
+
+            list.innerHTML = expenses.map(exp => `
+                <div class="flex justify-between bg-slate-50 p-2 rounded-2xl text-base">
+                    <span>${exp.date} — ${exp.category}</span>
+                    <span>€${exp.amount}</span>
+                </div>
+            `).join('');
+
+            const total = expenses.reduce((sum, e) => sum + e.amount, 0);
+            totalEl.textContent = total.toFixed(2);
+        }
+
+        // === TRANSFER TO ANOTHER DEVICE (local base64 code, no external service) ===
+        function collectSyncData() {
+            const data = { general: document.getElementById('general-notes')?.value || '' };
+            fullItinerary.forEach(item => {
+                const key = item.place.toLowerCase().replace(/\s+/g, '');
+                data[`note-${key}`] = document.getElementById(`note-${key}`)?.value || '';
+            });
+            data.packingList = getPackingItems();
+            data.documentsChecked = getDocumentsChecked();
+            data.budgetExpenses = JSON.parse(localStorage.getItem('budgetExpenses')) || [];
+            data.contactsNotes = document.getElementById('contacts-notes')?.value || '';
+            data.insuranceInfo = document.getElementById('insurance-info')?.value || '';
+            data.medicalNotes = document.getElementById('medical-notes')?.value || '';
+            data.savedAt = new Date().toISOString();
+            return data;
+        }
+
+        function applySyncData(data) {
+            if (!data) return;
+            localStorage.setItem('general-trip-notes', data.general || '');
+            fullItinerary.forEach(item => {
+                const key = item.place.toLowerCase().replace(/\s+/g, '');
+                localStorage.setItem(`note-${key}`, data[`note-${key}`] || '');
+            });
+            if (data.packingList) savePackingItems(data.packingList);
+            if (data.documentsChecked) localStorage.setItem('documentsChecked', JSON.stringify(data.documentsChecked));
+            if (data.budgetExpenses) localStorage.setItem('budgetExpenses', JSON.stringify(data.budgetExpenses));
+            localStorage.setItem('contactsNotes', data.contactsNotes || '');
+            localStorage.setItem('insuranceInfo', data.insuranceInfo || '');
+            localStorage.setItem('medicalNotes', data.medicalNotes || '');
+            renderDiary();
+            renderPackingList();
+            renderDocumentsList();
+            renderBudget();
+            const contactsNotes = document.getElementById('contacts-notes');
+            if (contactsNotes) contactsNotes.value = data.contactsNotes || '';
+            const insuranceInfo = document.getElementById('insurance-info');
+            if (insuranceInfo) insuranceInfo.value = data.insuranceInfo || '';
+            const medicalNotes = document.getElementById('medical-notes');
+            if (medicalNotes) medicalNotes.value = data.medicalNotes || '';
+        }
+
+        function setSyncStatus(msg, isError) {
+            const el = document.getElementById('sync-status');
+            if (el) {
+                el.textContent = msg;
+                el.className = `text-xs ${isError ? 'text-red-600' : 'text-slate-500'}`;
+            }
+        }
+
+        function generateTransferCode() {
+            try {
+                const json = JSON.stringify(collectSyncData());
+                const code = btoa(unescape(encodeURIComponent(json)));
+                document.getElementById('sync-code').value = code;
+                setSyncStatus('Code generated below. Copy it and send it to your other device (Messages, email, AirDrop, etc.), then paste it into this same box there and tap "Apply Pasted Code."');
+            } catch (e) {
+                setSyncStatus('Could not generate a code. Try again.', true);
+            }
+        }
+
+        function applyTransferCode() {
+            const code = document.getElementById('sync-code').value.trim();
+            if (!code) return setSyncStatus('Paste a transfer code first.', true);
+            try {
+                const json = decodeURIComponent(escape(atob(code)));
+                const data = JSON.parse(json);
+                applySyncData(data);
+                setSyncStatus(`Applied (saved on the other device ${data.savedAt ? new Date(data.savedAt).toLocaleString() : 'at unknown time'}).`);
+            } catch (e) {
+                setSyncStatus('That code looks invalid or incomplete — check you copied the whole thing.', true);
+            }
+        }
+
+        function copySyncCode() {
+            const input = document.getElementById('sync-code');
+            if (!input.value) return setSyncStatus('Generate a code first.', true);
+            navigator.clipboard.writeText(input.value).then(() => setSyncStatus('Code copied to clipboard.'));
+        }
+
+        function initHelpers() {
+            renderPackingList();
+            renderDocumentsList();
+            renderBudget();
+
+            const contactsNotes = document.getElementById('contacts-notes');
+            if (contactsNotes) {
+                contactsNotes.value = localStorage.getItem('contactsNotes') || '';
+                contactsNotes.addEventListener('input', () => {
+                    localStorage.setItem('contactsNotes', contactsNotes.value);
+                });
+            }
+
+            const insuranceInfo = document.getElementById('insurance-info');
+            if (insuranceInfo) {
+                insuranceInfo.value = localStorage.getItem('insuranceInfo') || '';
+                insuranceInfo.addEventListener('input', () => {
+                    localStorage.setItem('insuranceInfo', insuranceInfo.value);
+                });
+            }
+
+            const medicalNotes = document.getElementById('medical-notes');
+            if (medicalNotes) {
+                medicalNotes.value = localStorage.getItem('medicalNotes') || '';
+                medicalNotes.addEventListener('input', () => {
+                    localStorage.setItem('medicalNotes', medicalNotes.value);
+                });
+            }
+        }
+
+        const TRIP_START = new Date(Date.UTC(2027, 4, 19)); // May 19, 2027
+        const TRIP_END = new Date(Date.UTC(2027, 5, 6));    // June 6, 2027
+
+        function getStayDateRange(item) {
+            const match = item.day.match(/Days?\s*(\d+)(?:-(\d+))?/i);
+            if (!match) return null;
+            const startDayNum = parseInt(match[1]);
+            const endDayNum = match[2] ? parseInt(match[2]) : startDayNum;
+            const start = new Date(TRIP_START.getTime() + (startDayNum - 1) * 86400000);
+            const end = new Date(TRIP_START.getTime() + endDayNum * 86400000); // exclusive (checkout day)
+            return { start, end };
+        }
+
+        function isToday(item) {
+            const range = getStayDateRange(item);
+            if (!range) return false;
+            const today = new Date();
+            const todayUTC = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+            return todayUTC >= range.start.getTime() && todayUTC < range.end.getTime();
+        }
+
+        function renderCountdown() {
+            const pill = document.getElementById('countdown-pill');
+            if (!pill) return;
+            const today = new Date();
+            const todayUTC = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+            const msPerDay = 24 * 60 * 60 * 1000;
+            const daysToStart = Math.round((TRIP_START.getTime() - todayUTC) / msPerDay);
+            const daysToEnd = Math.round((TRIP_END.getTime() - todayUTC) / msPerDay);
+
+            if (daysToStart > 0) {
+                pill.innerHTML = `<i class="fa-solid fa-plane-departure mr-2"></i>${daysToStart} day${daysToStart === 1 ? '' : 's'} to go`;
+            } else if (daysToEnd >= 0) {
+                pill.innerHTML = `<i class="fa-solid fa-umbrella-beach mr-2"></i>On the trip! Day ${Math.abs(daysToStart) + 1}`;
+            } else {
+                pill.innerHTML = `<i class="fa-solid fa-heart mr-2"></i>Bentornati!`;
+            }
+        }
+
+        function fetchCurrencyRate() {
+            const pill = document.getElementById('currency-pill');
+            if (!pill) return;
+            fetch('https://api.frankfurter.app/latest?from=EUR&to=AUD')
+                .then(res => res.json())
+                .then(data => {
+                    const rate = data && data.rates && data.rates.AUD;
+                    if (rate) {
+                        pill.textContent = `€1 ≈ ${rate.toFixed(2)} AUD`;
+                    }
+                })
+                .catch(() => { /* keep static fallback rate already in the page */ });
+        }
+
+        function openEmergencyInfo() {
+            const card = document.getElementById('emergency-card');
+            if (!card) return;
+            card.setAttribute('open', '');
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function toggleContrastMode() {
+            const isOn = document.body.classList.toggle('high-contrast');
+            localStorage.setItem('highContrast', isOn ? '1' : '0');
+        }
+
+        function toggleDarkMode() {
+            const isOn = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', isOn ? '1' : '0');
+        }
+
+        function applyContrastPreference() {
+            if (localStorage.getItem('highContrast') === '1') {
+                document.body.classList.add('high-contrast');
+            }
+            if (localStorage.getItem('darkMode') === '1') {
+                document.body.classList.add('dark-mode');
+            }
+        }
+
+        function highlightCurrentStayOverview() {
+            fullItinerary.forEach((item, index) => {
+                const el = document.getElementById(`overview-${index}`);
+                if (!el) return;
+                if (isToday(item)) {
+                    el.classList.add('border-4', 'border-green-400');
+                    if (!el.querySelector('.today-badge')) {
+                        const badge = document.createElement('div');
+                        badge.className = 'today-badge bg-green-500 text-white text-xs font-bold px-2 py-0.5 rounded-full inline-block mt-1';
+                        badge.textContent = 'TODAY';
+                        el.appendChild(badge);
+                    }
+                }
+            });
+        }
+
+        const WEATHER_FORCE_LIVE = true; // demo mode: shows live weather now instead of waiting until 10 days before departure. Set to false to restore normal gating.
+
+        const WEATHER_LOCATIONS = [
+            { name: "Rome", lat: 41.9028, lon: 12.4964 },
+            { name: "Positano", lat: 40.6280, lon: 14.4849 },
+            { name: "Florence", lat: 43.7696, lon: 11.2558 },
+            { name: "Gaiole in Chianti", lat: 43.4689, lon: 11.4372 },
+            { name: "Stresa", lat: 45.8836, lon: 8.5388 }
+        ];
+
+        const WMO_ICONS = {
+            0: '☀️', 1: '🌤️', 2: '⛅', 3: '☁️', 45: '🌫️', 48: '🌫️',
+            51: '🌦️', 53: '🌦️', 55: '🌦️', 61: '🌧️', 63: '🌧️', 65: '🌧️',
+            71: '🌨️', 73: '🌨️', 75: '🌨️', 80: '🌦️', 81: '🌧️', 82: '⛈️',
+            95: '⛈️', 96: '⛈️', 99: '⛈️'
+        };
+
+        function renderWeatherForecast() {
+            const container = document.getElementById('weather-forecast');
+            if (!container) return;
+
+            const today = new Date();
+            const todayUTC = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+            const msPerDay = 24 * 60 * 60 * 1000;
+            const daysToStart = Math.round((TRIP_START.getTime() - todayUTC) / msPerDay);
+            const daysToEnd = Math.round((TRIP_END.getTime() - todayUTC) / msPerDay);
+
+            // Only fetch live forecasts within ~10 days of departure through the end of the trip
+            if (!WEATHER_FORCE_LIVE && (daysToStart > 10 || daysToEnd < 0)) {
+                const activateDate = new Date(TRIP_START.getTime() - 10 * msPerDay);
+                const activateStr = activateDate.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+                container.innerHTML = `<div class="text-slate-500">Live forecasts aren't available this far out. This card will automatically show real forecasts for all 5 destinations starting <strong>${activateStr}</strong> (10 days before departure). For now, check the AccuWeather link in Your Trip Tools below.</div>`;
+                return;
+            }
+
+            container.innerHTML = `<div class="text-slate-500">Loading live forecasts...</div>`;
+
+            const showDemoNote = WEATHER_FORCE_LIVE && daysToStart > 10;
+            const demoNoteHTML = showDemoNote
+                ? `<div class="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-2xl text-sm text-blue-800"><i class="fa-solid fa-circle-info mr-1"></i> Demo mode: showing today's live weather to prove the feature works. Once it's closer to the actual trip (May 19 – June 6, 2027), this will automatically switch to real forecasts for those dates.</div>`
+                : '';
+
+            Promise.all(WEATHER_LOCATIONS.map(loc =>
+                fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Europe%2FRome&forecast_days=5`)
+                    .then(res => res.json())
+                    .then(data => ({ loc, data }))
+                    .catch(() => ({ loc, data: null }))
+            )).then(results => {
+                container.innerHTML = demoNoteHTML + results.map(({ loc, data }) => {
+                    if (!data || !data.daily) {
+                        return `<div class="mb-4"><div class="font-semibold text-blue-900">${loc.name}</div><div class="text-sm text-slate-500">Forecast unavailable right now.</div></div>`;
+                    }
+                    const days = data.daily.time.map((date, i) => {
+                        const d = new Date(date);
+                        const label = d.toLocaleDateString('en-AU', { weekday: 'short', day: 'numeric' });
+                        const icon = WMO_ICONS[data.daily.weathercode[i]] || '🌡️';
+                        const max = Math.round(data.daily.temperature_2m_max[i]);
+                        const min = Math.round(data.daily.temperature_2m_min[i]);
+                        return `<div class="text-center flex-1 min-w-[60px]"><div class="text-xs text-slate-500">${label}</div><div class="text-2xl">${icon}</div><div class="text-sm font-medium">${max}°/${min}°</div></div>`;
+                    }).join('');
+                    return `<div class="mb-4">
+                        <div class="font-semibold text-blue-900 mb-2">${loc.name}</div>
+                        <div class="flex gap-1 bg-slate-50 rounded-2xl p-3">${days}</div>
+                    </div>`;
+                }).join('');
+            }).catch(() => {
+                container.innerHTML = `<div class="text-slate-500">Couldn't load live forecasts right now — check your connection, or use the AccuWeather link in Your Trip Tools below.</div>`;
+            });
+        }
+
+        function init() {
+            renderDays();
+            renderDiary();
+            initHelpers();
+            renderCountdown();
+            fetchCurrencyRate();
+            applyContrastPreference();
+            highlightCurrentStayOverview();
+            renderWeatherForecast();
+        }
+
+        init();
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').catch((err) => {
+                    console.warn('Service worker registration failed:', err);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
