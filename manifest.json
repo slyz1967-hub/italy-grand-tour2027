@@ -1,0 +1,61 @@
+{
+  "name": "Grand Tour of Italy 2027",
+  "short_name": "Italy Tour",
+  "description": "Luxury itinerary, diary, and resources for the Grand Tour of Italy — May 19 to June 6, 2027",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f1f5f9",
+  "theme_color": "#0e7490",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Today",
+      "short_name": "Today",
+      "description": "Jump straight to today's plan",
+      "url": "./index.html?view=today",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Emergency & Medical",
+      "short_name": "Emergency",
+      "description": "Emergency numbers, hospitals and medical notes",
+      "url": "./index.html?view=emergency",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Add Expense",
+      "short_name": "Expense",
+      "description": "Log a euro expense to the budget tracker",
+      "url": "./index.html?view=expense",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Diary",
+      "short_name": "Diary",
+      "description": "Write today's diary entry",
+      "url": "./index.html?view=diary",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}
